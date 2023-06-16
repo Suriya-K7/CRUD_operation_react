@@ -58,32 +58,15 @@ export const DataProvider = ({ children }) => {
     ];
     setUsers(localStorageUsers);
   }, []);
-  // useEffect(() => {
-  //   let localStoragePosts = JSON.parse(localStorage.getItem("post")) || [];
-  //   // console.log(localStoragePosts);
-
-  // setPosts(localStoragePosts);
-  // setSearchResults(localStoragePosts.reverse());
-  // }, [posts]);
-
-  // useEffect(() => {
-  //   let localStoragePosts = JSON.parse(localStorage.getItem("post")) || [];
-  //   let filteredPosts = localStoragePosts.filter(
-  //     (post) =>
-  //       post.title.toLowerCase().includes(search.toLowerCase()) ||
-  //       post.body.toLowerCase().includes(search.toLowerCase())
-  //   );
-  //   setSearchResults(filteredPosts.reverse());
-  // }, [posts, search]);
   /*---------------------------- */
   // if used from server
   /*
-      let [posts, setPosts] = useState([]);
+      let [users, setUsers] = useState([]);
   useEffect(() => {
-    let fetchPost = async () => {
+    let fetchUser = async () => {
       try {
-        let response = await api.get("/posts");
-        setPosts(response.data);
+        let response = await api.get("/user");
+        setUsers(response.data);
       } catch (error) {
         if (error.response) {
           console.log(error.response.data);
@@ -94,16 +77,8 @@ export const DataProvider = ({ children }) => {
         }
       }
     };
-    fetchPost();
+    fetchUser();
   }, []);
-  useEffect(() => {
-    let filteredPosts = posts.filter(
-      (post) =>
-        post.title.toLowerCase().includes(search.toLowerCase()) ||
-        post.body.toLowerCase().includes(search.toLowerCase())
-    );
-    setSearchResults(filteredPosts.reverse());
-  }, [posts, search]);
   */
   /*------------------------------------- */
   let navigate = useNavigate();
@@ -115,11 +90,11 @@ export const DataProvider = ({ children }) => {
     // if used from server
     /*
     try {
-      let response = await api.post("/posts", newPost);
-      let allPosts = [...posts, response.data];
-      setPosts(allPosts);
-      setPostBody("");
-      setPostTitle("");
+      let response = await api.post("/users", newUser);
+      let allUsers = [...users, response.data];
+      setUsers(allUsers);
+      setUserSkill("");
+      setUserName("");
       navigate("/");
     } catch (error) {
       if (error.response) {
@@ -145,9 +120,9 @@ export const DataProvider = ({ children }) => {
     // if used from server
     /*
     try {
-      await api.delete(`/posts/${id}`);
-      let filteredPosts = posts.filter((post) => post.id !== id);
-      setPosts(filteredPosts);
+      await api.delete(`/users/${id}`);
+      let filteredUsers = users.filter((user) => user.id !== id);
+      setUsers(filteredUsers);
       navigate("/");
     } catch (error) {
       if (error.response) {
@@ -161,7 +136,7 @@ export const DataProvider = ({ children }) => {
     */
     /*----------------------------- */
     // if using through local storage
-    let filteredUsers = users.filter((post) => post.id !== id);
+    let filteredUsers = users.filter((user) => user.id !== id);
     setUsers(filteredUsers);
     navigate("/user");
     localStorage.setItem("users", JSON.stringify(filteredUsers));
@@ -173,13 +148,13 @@ export const DataProvider = ({ children }) => {
     // if used from server
     /*
     try {
-      let response = await api.put(`/posts/${id}`, editedPost);
-      let updatedPost = posts.map((post) =>
-        post.id === id ? { ...response.data } : post
+      let response = await api.put(`/users/${id}`, editedUser);
+      let updatedUser = users.map((user) =>
+        user.id === id ? { ...response.data } : user
       );
-      setPosts(updatedPost);
-      setEditBody("");
-      setEditTitle("");
+      setUsers(updatedUser);
+      setEditSkill("");
+      setEditName("");
       navigate("/");
     } catch (error) {
       if (error.response) {

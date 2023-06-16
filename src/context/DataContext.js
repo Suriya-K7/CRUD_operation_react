@@ -200,7 +200,7 @@ export const DataProvider = ({ children }) => {
     setEditSkill("");
     setEditName("");
     navigate("/user");
-    localStorage.setItem("user", JSON.stringify(updatedUser));
+    localStorage.setItem("users", JSON.stringify(updatedUser));
     /*---------------------------- */
   };
   return (

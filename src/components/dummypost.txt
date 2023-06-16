@@ -1,0 +1,20 @@
+[
+    {
+      id: 1,
+      name: "Suriya",
+      datetime: "June 01, 2023 12:29:36 PM",
+      skill: "Front End Developer",
+    },
+    {
+      id: 2,
+      name: "Udhaya",
+      datetime: "June 01, 2023 12:29:36 PM",
+      skill: "Back End Developer",
+    },
+    {
+      id: 3,
+      name: "SK7",
+      datetime: "June 01, 2023 12:29:36 PM",
+      skill: "Full Stack Developer",
+    },
+]

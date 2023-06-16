@@ -21,7 +21,7 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="user">
+          <Route path="users">
             <Route index element={<UserDatas />} />
             <Route path="user/:id" element={<User />} />
           </Route>

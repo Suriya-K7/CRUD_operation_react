@@ -15,7 +15,7 @@ const Docs = () => {
         <h3>Usage</h3>
         <li>after url+"/" will lead to home page with discription about app</li>
         <li>
-          after url+"/user" will lead to user page where it will show all user
+          after url+"/users" will lead to user page where it will show all user
           data
         </li>
         <li>
@@ -23,7 +23,7 @@ const Docs = () => {
           can be added
         </li>
         <li>
-          after url+"/user/user/:id" will lead to selected user page where it
+          after url+"/users/user/:id" will lead to selected user page where it
           will show selected user data
         </li>
         <li>

@@ -65,7 +65,7 @@ export const DataProvider = ({ children }) => {
   useEffect(() => {
     let fetchUser = async () => {
       try {
-        let response = await api.get("/user");
+        let response = await api.get("/users");
         setUsers(response.data);
       } catch (error) {
         if (error.response) {
@@ -111,7 +111,7 @@ export const DataProvider = ({ children }) => {
     setUsers(allUsers);
     setUserName("");
     setUserSkill("");
-    navigate("/user");
+    navigate("/users");
     localStorage.setItem("users", JSON.stringify(allUsers));
 
     /*---------------------------- */
@@ -138,7 +138,7 @@ export const DataProvider = ({ children }) => {
     // if using through local storage
     let filteredUsers = users.filter((user) => user.id !== id);
     setUsers(filteredUsers);
-    navigate("/user");
+    navigate("/users");
     localStorage.setItem("users", JSON.stringify(filteredUsers));
     /*---------------------------- */
   };
@@ -174,7 +174,7 @@ export const DataProvider = ({ children }) => {
     setUsers(updatedUser);
     setEditSkill("");
     setEditName("");
-    navigate("/user");
+    navigate("/users");
     localStorage.setItem("users", JSON.stringify(updatedUser));
     /*---------------------------- */
   };

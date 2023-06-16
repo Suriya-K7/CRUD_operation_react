@@ -56,7 +56,7 @@ export const DataProvider = ({ children }) => {
         skill: "React",
       },
     ];
-    setUsers(localStorageUsers.reverse());
+    setUsers(localStorageUsers);
   }, []);
   // useEffect(() => {
   //   let localStoragePosts = JSON.parse(localStorage.getItem("post")) || [];

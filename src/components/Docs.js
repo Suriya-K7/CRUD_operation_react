@@ -4,7 +4,7 @@ const Docs = () => {
   return (
     <main className="Docs">
       <h2>Docs</h2>
-      <p style={{ marginTop: "0.5rem", fontSize: "1rem" }}>
+      <p>
         Hi, I'm Suriya, This app created by impelmeting CRUD operations on user
         data through local storage. And react-router-dom used for routing.
         Through axios mock server created for fetching from mock server from

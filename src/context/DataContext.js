@@ -14,10 +14,48 @@ export const DataProvider = ({ children }) => {
   // if using through local storage
 
   let [users, setUsers] = useState(
-    JSON.parse(localStorage.getItem("users")) || []
+    JSON.parse(localStorage.getItem("users")) || [
+      {
+        id: 1,
+        name: "Suriya",
+        datetime: "June 01, 2023 12:29:36 PM",
+        skill: "HTML & CSS",
+      },
+      {
+        id: 2,
+        name: "SK7",
+        datetime: "June 01, 2023 12:29:36 PM",
+        skill: "JS",
+      },
+      {
+        id: 3,
+        name: "US",
+        datetime: "June 01, 2023 12:29:36 PM",
+        skill: "React",
+      },
+    ]
   );
   useEffect(() => {
-    let localStorageUsers = JSON.parse(localStorage.getItem("users")) || [];
+    let localStorageUsers = JSON.parse(localStorage.getItem("users")) || [
+      {
+        id: 1,
+        name: "Suriya",
+        datetime: "June 15, 2023 12:29:36 PM",
+        skill: "HTML & CSS",
+      },
+      {
+        id: 2,
+        name: "SK7",
+        datetime: "June 01, 2023 10:29:36 PM",
+        skill: "JS",
+      },
+      {
+        id: 3,
+        name: "US",
+        datetime: "may 01, 2023 1:29:36 PM",
+        skill: "React",
+      },
+    ];
     setUsers(localStorageUsers.reverse());
   }, []);
   // useEffect(() => {

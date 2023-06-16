@@ -8,7 +8,7 @@ const Header = ({ title }) => {
     <header className="Header">
       <h1>{title}</h1>
       <p>
-        {width < 768 ? (
+        {width < 500 ? (
           <FaMobileAlt />
         ) : width < 992 ? (
           <FaTabletAlt />

@@ -9,7 +9,7 @@ const UserDatas = () => {
       {users.length ? (
         <Feed users={users} />
       ) : (
-        <p style={{ marginTop: "2rem" }}>No posts to display.</p>
+        <p style={{ marginTop: "2rem" }}>No users to display.</p>
       )}
     </main>
   );
